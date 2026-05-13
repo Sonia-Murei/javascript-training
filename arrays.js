@@ -35,3 +35,11 @@ console.log(values) //['Peach', 100, 1, 2, 3, 'Apple', 'Samsung', true, 'HP', 8,
 //Checking whether a certain value exists in an arrays using Includes
 console.log(values.includes(8)) //true
 console.log(values.includes(50)) //false
+
+//Spread Operator
+let num1=[10,20,30]
+let num2=[40,50,60]
+let num3=[...num1,...num2] 
+
+console.log(num3) //(6) [10,20,30,40,50,60]
+
