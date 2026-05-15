@@ -1,12 +1,4 @@
 // In the below complex data structure output the following: 
-// a)PostgreSQL 
-console.log(company.departments[0].employees[1].skills[2]);
-
-// b)Brand Strategy 
-console.log(company.departments[1].employees[1].skills[2]);
-
-// c)React
-console.log(company.departments[0].employees[0].skills[1]);
 
 let company = { name: "TechCorp", 
                 founded: 2010, 
@@ -49,3 +41,12 @@ let company = { name: "TechCorp",
                             { title: "Brand Awareness Campaign",
                               deadline: "2025-10-15", 
                               team: [3, 4] } ] };
+
+                              // a)PostgreSQL 
+console.log(company.departments[0].employees[1].skills[2]);
+
+// b)Brand Strategy 
+console.log(company.departments[1].employees[1].skills[2]);
+
+// c)React
+console.log(company.departments[0].employees[0].skills[1]);

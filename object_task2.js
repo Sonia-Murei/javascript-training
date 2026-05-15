@@ -1000,14 +1000,14 @@ let pops = {
 for (let i = 0; i < countries.length; i++) {
   let population = countries[i].population;
   //Gets the population value from EACH country
+  //"i" represents indexes
 
   if (population <= 50000000) {
     pops["0-50m"]++;
-  } 
-  else if (population <= 100000000) {
+    //using bracket notation [] because "0-50m" does not follow naming rules
+  }else if (population <= 100000000) {
     pops["51m-100m"]++;
-  } 
-  else {
+  }else {
     pops[">100m"]++;
   }
 }
