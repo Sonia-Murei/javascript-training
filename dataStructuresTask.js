@@ -1,5 +1,6 @@
 // In the below complex data structure output the following: 
 
+  //NOTE: Use ctrl + f to "find"
 let company = { name: "TechCorp", 
                 founded: 2010, 
                 location: { country: "Kenya", 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Intermediate Task 9</p>
+    </div>
+
+    <script>
+        // Write a program called stars. 
+        // It should prompt the user for a number, 
+        // and it should print the number of stars till the number entered.
+        // Example If rows is 5, it should print the following:
+        // *
+        // **
+        // ***
+        // ****
+        // *****.....
+
+        rows=Number(prompt("Enter number of rows: "))
+
+        for(let stars = 1; stars<=rows; stars++){
+            console.log("*".repeat(stars) )
+        }
+
+        // NOTE:
+        // ".repeat(stars)" repeats "*" as many times as specified in "rows".
+        // Starting from stars = 1 instead of stars = 0 makes it easier, so you don’t need stars + 1.
+        // console.log("*" * (stars+1))
+        // doesn’t work in JavaScript because * is for multiplication, 
+        // and you can’t multiply strings like "*".
+
+    </script>
+    
+</body>
+</html>

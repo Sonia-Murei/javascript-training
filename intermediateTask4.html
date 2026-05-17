@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Intermediate Task 4</p>
+    </div>
+
+    <script>
+        // Write a program which accepts email as form input or from terminal. 
+        // Validate the email by checking if it's a valid email. 
+        // Hint: Check if it contains an “@” symbol and “.” symbol.
+
+        let mail = prompt("Enter your email: ")
+
+        if(mail.includes("@") && mail.includes(".")){
+            console.log(mail + " is a valid email")
+        }else{
+            console.log(mail + " is not a valid email")
+        }
+
+    </script>
+    
+</body>
+</html>

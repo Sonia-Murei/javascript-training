@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Intermediate Task 12</p>
+    </div>
+
+    <script>
+        // Write a program that prints the largest of 4 inputs taken as input from a user.
+
+        let num1=Number(prompt("Enter num1: "))
+        let num2=Number(prompt("Enter num2: "))
+        let num3=Number(prompt("Enter num3: "))
+        let num4=Number(prompt("Enter num4: "))
+
+
+        if ((num1 > num2) && (num1 > num3) && (num1 > num4)){
+            console.log("Num1 is the largest")
+        }else if ((num2 > num1) && (num2 > num3) && (num2 > num4)){
+            console.log("Num2 is the largest")
+        }else if ((num3 > num1) && (num3 > num2) && (num3 > num4)){
+            console.log("Num3 is the largest")
+        }else{
+            console.log("Num4 is the largest")
+        }
+
+    </script>
+    
+</body>
+</html>

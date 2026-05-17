@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Intermediate Task 6</p>
+    </div>
+    
+    <script>
+        // Write a program that lets the user input a password. 
+        // Give them only 4 attempts to check the passwords entered against “admin@123”. 
+        // If the password is correct access is granted. 
+        // After you show them a message , the account is blocked.
+
+        const correct_password = "admin@123"
+
+        for(i = 0; i < 4; i++){  // i < 4 → allows exactly 4 tries
+            let password = prompt("Enter your password: ") 
+            //prompt() is inside the loop → user can re-enter password each time
+            if(password == correct_password){
+                console.log("Access granted")
+                break; //break → stops once password is correct
+            }else if((password != correct_password) && (i<3)) {
+                console.log("Access denied " + (3 - i) + " tries remaining")
+            }else{
+                console.log("Access denied " + (3 - i) + " tries remaining. Account blocked")
+            } //(3 - i) → shows remaining tries
+        }
+    </script>
+</body>
+</html>
