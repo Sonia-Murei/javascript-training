@@ -21,19 +21,21 @@
         // ****
         // *****.....
 
-        rows=Number(prompt("Enter number of rows: "))
+        Numb=Number(prompt("Enter number of rows: "))
 
-        for(let stars = 1; stars<=rows; stars++){
-            console.log("*".repeat(stars) )
+        for(let i = 1; i<=Numb; i++){
+            let rows = ""
+            for(let j = 1; j <= i; j++){
+                rows += "*"
+            }
+            console.log(rows)
         }
 
         // NOTE:
-        // ".repeat(stars)" repeats "*" as many times as specified in "rows".
-        // Starting from stars = 1 instead of stars = 0 makes it easier, so you don’t need stars + 1.
-        // console.log("*" * (stars+1))
-        // doesn’t work in JavaScript because * is for multiplication, 
-        // and you can’t multiply strings like "*".
+        // i => for creating rows.
+        // j => for adding stars to those rows.
 
+        
     </script>
     
 </body>
