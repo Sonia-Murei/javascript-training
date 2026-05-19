@@ -20,9 +20,9 @@
         let num1 = Number(prompt("Enter the first number: "))
         let num2 = Number(prompt("Enter the second number: "))
 
-        if(num1== Number && num2== Number){
-            sum=num1+num2
-            console.log(sum)
+        if(!isNaN(num1) && !isNaN(num2)){
+            let sum=num1+num2
+            console.log(`Sum is ${sum}`)
         }else{
             console.log("Invalid character entered. Re-enter the inputs")
         }

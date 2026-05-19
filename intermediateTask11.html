@@ -14,7 +14,91 @@
         //Write a program that takes the date of birth of a person and 
         // the program outputs the age in terms of years,months,days TODAY.datetime
 
+        let dob = prompt("Enter your date of birth (yyyy-mm-dd):")
 
+        // Converting input into a Date object
+        let birthDate = new Date(dob)
+
+
+        // Extracting birth & current: year, month, and day
+        let birth_year = Number(dob.slice(0, 4))
+        let birth_month = Number(dob.slice(5, 7))
+        let birth_day = Number(dob.slice(8, 10))
+
+        // Getting today's date
+
+        let today = new Date().toISOString().slice(0, 10)
+
+        // NOTE: .toISOString() is better than .toString() in this case 
+        // because the format matches your input hence makes slicing easier
+        // .toString() outputs "Mon May 19 2026"
+
+        let current_year = Number(today.slice(0, 4))
+        let current_month = Number(today.slice(5, 7))
+        let current_day = Number(today.slice(8, 10))
+
+        // Calculating difference to get age
+        let age_years = current_year - birth_year
+        let age_months = current_month - birth_month
+        let age_days = current_day - birth_day
+
+
+        if (age_months < 0) {
+            age_years = age_years - 1
+            age_months = 12 + age_months
+
+            if (age_days < 0) {
+                age_months = age_months - 1
+                age_days = 30 + age_days
+            }
+
+        } else {
+            if (age_months == 0 && age_days < 0) {
+                age_years = age_years - 1
+                age_months = 12
+                age_months = age_months - 1
+                age_days = 30 + age_days
+
+            } else {
+                if (age_days < 0) {
+                    age_months = age_months - 1
+                    age_days = 30 + age_days
+                }
+            }
+        }
+
+        console.log(`Years: ${age_years}, Months: ${age_months} , Days: ${age_days}`)
+
+
+                // Alt answer
+
+             // Adjust if days are negative
+        // if (age_days < 0) {
+        //     age_months--;
+        //     age_days += 30;   // approximate month length
+        // }
+
+             // Adjust if months are negative
+        // if (age_months < 0) {
+        //     age_years--;
+        //     age_months += 12;
+        // }
+
+             // Display result
+        // console.log(
+        //     "Age: " +
+        //     age_years + " years, " +
+        //     age_months + " months, " +
+        //     age_days + " days"
+        // );
+
+            // NOTE:
+        // date(prompt()) → new Date(prompt())
+        // JavaScript uses new Date().
+        // .year() → .getFullYear()
+        // .month() → .getMonth()
+        // .day() → .getDate()
+        // (getDay() means weekday, like Monday—not the date number.)
     </script>
 
 </body>
