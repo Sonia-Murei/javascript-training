@@ -17,16 +17,41 @@
         // otherwise display an error “invalid character entered” and 
         // take the user to re-enter the inputs .
 
-        let num1 = Number(prompt("Enter the first number: "))
-        let num2 = Number(prompt("Enter the second number: "))
+            // My Answer (got stuck on how to loop)
 
-        if(!isNaN(num1) && !isNaN(num2)){
-            let sum=num1+num2
-            console.log(`Sum is ${sum}`)
-        }else{
-            console.log("Invalid character entered. Re-enter the inputs")
-        }
+                // let num1 = Number(prompt("Enter the first number: "))
+                // let num2 = Number(prompt("Enter the second number: "))
 
+                // if(!isNaN(num1) && !isNaN(num2)){
+                //     let sum=num1+num2
+                //     console.log(`Sum is ${sum}`)
+                // }else{
+                //     console.log("Invalid character entered. Re-enter the inputs")
+                // }
+
+
+                    // Brian's Answer
+            let num1 
+            let num2
+
+
+            while(true){
+                let value1 = prompt("Enter value1")
+                let value2 = prompt("Enter value2")
+
+                num1 = Number(value1) 
+                num2 = Number(value2)
+
+                if(!isNaN(num1) && !isNaN(num2)){
+                    break
+                }
+
+                console.log("Invalid Inputs,please re-enter")
+
+            }
+
+            let sum = num1 + num2
+            console.log(sum)
 
     </script>
     

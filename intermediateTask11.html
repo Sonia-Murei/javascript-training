@@ -14,85 +14,110 @@
         //Write a program that takes the date of birth of a person and 
         // the program outputs the age in terms of years,months,days TODAY.datetime
 
-        let dob = prompt("Enter your date of birth (yyyy-mm-dd):")
+        // My Answer
 
-        // Converting input into a Date object
-        let birthDate = new Date(dob)
+        // let dob = prompt("Enter your date of birth (yyyy-mm-dd):")
 
-
-        // Extracting birth & current: year, month, and day
-        let birth_year = Number(dob.slice(0, 4))
-        let birth_month = Number(dob.slice(5, 7))
-        let birth_day = Number(dob.slice(8, 10))
-
-        // Getting today's date
-
-        let today = new Date().toISOString().slice(0, 10)
-
-        // NOTE: .toISOString() is better than .toString() in this case 
-        // because the format matches your input hence makes slicing easier
-        // .toString() outputs "Mon May 19 2026"
-
-        let current_year = Number(today.slice(0, 4))
-        let current_month = Number(today.slice(5, 7))
-        let current_day = Number(today.slice(8, 10))
-
-        // Calculating difference to get age
-        let age_years = current_year - birth_year
-        let age_months = current_month - birth_month
-        let age_days = current_day - birth_day
+        // // Converting input into a Date object
+        // let birthDate = new Date(dob)
 
 
-        if (age_months < 0) {
-            age_years = age_years - 1
-            age_months = 12 + age_months
+        // // Extracting birth & current: year, month, and day
+        // let birth_year = Number(dob.slice(0, 4))
+        // let birth_month = Number(dob.slice(5, 7))
+        // let birth_day = Number(dob.slice(8, 10))
 
-            if (age_days < 0) {
-                age_months = age_months - 1
-                age_days = 30 + age_days
-            }
+        // // Getting today's date
 
-        } else {
-            if (age_months == 0 && age_days < 0) {
-                age_years = age_years - 1
-                age_months = 12
-                age_months = age_months - 1
-                age_days = 30 + age_days
+        // let today = new Date().toISOString().slice(0, 10)
 
-            } else {
-                if (age_days < 0) {
-                    age_months = age_months - 1
-                    age_days = 30 + age_days
-                }
-            }
-        }
+        // // NOTE: .toISOString() is better than .toString() in this case 
+        // // because the format matches your input hence makes slicing easier
+        // // .toString() outputs "Mon May 19 2026"
 
-        console.log(`Years: ${age_years}, Months: ${age_months} , Days: ${age_days}`)
+        // let current_year = Number(today.slice(0, 4))
+        // let current_month = Number(today.slice(5, 7))
+        // let current_day = Number(today.slice(8, 10))
+
+        // // Calculating difference to get age
+        // let age_years = current_year - birth_year
+        // let age_months = current_month - birth_month
+        // let age_days = current_day - birth_day
 
 
-                // Alt answer
-
-             // Adjust if days are negative
-        // if (age_days < 0) {
-        //     age_months--;
-        //     age_days += 30;   // approximate month length
-        // }
-
-             // Adjust if months are negative
         // if (age_months < 0) {
-        //     age_years--;
-        //     age_months += 12;
+        //     age_years = age_years - 1
+        //     age_months = 12 + age_months
+
+        //     if (age_days < 0) {
+        //         age_months = age_months - 1
+        //         age_days = 30 + age_days
+        //     }
+
+        // } else {
+        //     if (age_months == 0 && age_days < 0) {
+        //         age_years = age_years - 1
+        //         age_months = 12
+        //         age_months = age_months - 1
+        //         age_days = 30 + age_days
+
+        //     } else {
+        //         if (age_days < 0) {
+        //             age_months = age_months - 1
+        //             age_days = 30 + age_days
+        //         }
+        //     }
         // }
 
-             // Display result
-        // console.log(
-        //     "Age: " +
-        //     age_years + " years, " +
-        //     age_months + " months, " +
-        //     age_days + " days"
-        // );
+        // console.log(`Years: ${age_years}, Months: ${age_months} , Days: ${age_days}`)
 
-            // NOTE:
+
+        // Brian's Answer
+let birth_date = prompt("Enter your dob in the format(yyyy-mm-dd)") //1999-02-22
+
+let birth_date_sections = birth_date.split('-')
+console.log(birth_date_sections) //(3) ['1999', '02', '22']
+
+let birth_year = Number(birth_date_sections[0])
+let birth_month = Number(birth_date_sections[1])
+let birth_day = Number(birth_date_sections[2])
+
+let current_year = 2026 //27.  ->27y 2m 28days --- 27y 1m 58days
+let current_month = 5 // 3
+let current_day = 20 // -2
+
+let monthdays = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+
+// 22feb ---> 22mar ----> 22apr ----> 22may 26th
+
+if(current_day < birth_day){
+    if((birth_year%4==0) && (birth_year %100!=0) || (birth_year % 400 == 0)){
+         monthdays[1] = 29
+    }
+    current_month-- //0 
+    current_day += monthdays[(current_month - 1 + 12) % 12] 
+    monthdays.at(current_month - 1)
+}
+
+let calculated_days = current_day - birth_day
+let calculated_month;
+let calculated_years;
+
+if(current_month < birth_month){
+   calculated_month = 12 - (birth_month - current_month)
+   calculated_years = current_year - birth_year - 1
+}else{
+    calculated_month = current_month - birth_month
+    calculated_years = current_year - birth_year
+}
+
+console.log({"Calculated year":calculated_years,"Calculated month":calculated_month,
+    "Calculated days":calculated_days
+})
+
+
+            // NOTE(My Answer):
         // date(prompt()) → new Date(prompt())
         // JavaScript uses new Date().
         // .year() → .getFullYear()
